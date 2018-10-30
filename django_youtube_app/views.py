@@ -1,12 +1,8 @@
 from django.http import JsonResponse
-import os
 import django_youtube_app
 import django_youtube_app.models
 
 
-host = os.getenv('BHOST', '192.168.1.63')
-port = os.getenv('BPORT', '30002')
-url = f'http://{host}:{port}/'
 max_limit = 1000
 
 
