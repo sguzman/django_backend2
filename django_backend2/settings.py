@@ -75,6 +75,9 @@ WSGI_APPLICATION = 'django_backend2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+host = os.getenv('HOST', '192.168.1.63')
+port = os.getenv('PORT', '30000')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -84,8 +87,8 @@ DATABASES = {
         'NAME': 'youtube',
         'USER': 'postgres',
         'PASSWORD': '',
-        'HOST': '192.168.1.63',
-        'PORT': '30000'
+        'HOST': host,
+        'PORT': port
     }
 }
 
