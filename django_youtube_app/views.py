@@ -18,6 +18,8 @@ def random(request):
 # Create your views here.
 def index(request, serial, limit):
     print(serial, limit)
-    print(django_youtube_app.models.ChanStats.objects.filter(serial=serial)[:limit])
+    serials = django_youtube_app.models.ChanStats.objects.filter(serial=serial).order_by('-time')[:limit]
+    for s in serials:
+        print(s.serial, s.time, s.subs)
 
     return HttpResponse("<h1>Response</h1>")
