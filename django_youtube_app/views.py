@@ -7,13 +7,14 @@ import django_youtube_app.models
 host = os.getenv('BHOST', '192.168.1.63')
 port = os.getenv('BPORT', '30002')
 url = f'http://{host}:{port}/'
+max_limit = 1000
 
 
 # Create your views here.
-def index(request, serial, limit=100):
+def index(request, serial, limit=max_limit):
     print(serial, limit)
-    if limit > 100:
-        limit = 100
+    if limit > max_limit:
+        limit = max_limit
 
     serials = django_youtube_app.models.ChanStats.objects.filter(serial=serial).order_by('-time')[:limit]
 
