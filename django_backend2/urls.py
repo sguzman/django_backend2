@@ -19,5 +19,5 @@ import django_youtube_app.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('youtube/', django_youtube_app.views.index)
+    path('youtube/<str:serial>/<int:limit>', django_youtube_app.views.index)
 ]
