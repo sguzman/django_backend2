@@ -18,6 +18,6 @@ from django.urls import path
 import django_youtube_app.views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('youtube/random', django_youtube_app.views.random),
     path('youtube/<str:serial>/<int:limit>', django_youtube_app.views.index)
 ]
